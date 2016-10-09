@@ -1,0 +1,5 @@
+# Ignore binary directory
+dist
+
+# Ignore all hidden files and directories
+.*
