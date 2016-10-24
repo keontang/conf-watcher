@@ -44,7 +44,7 @@ func NewWatcherConfig() *WatcherConfig {
 }
 
 func (wc *WatcherConfig) AddFlags(fs *pflag.FlagSet) {
-	fs.StringVar(&wc.WatchlistDir, "watchlist-dir", "/var/run/conf-watcher", "Directory of the watchlist files for conf-watcher server")
+	fs.StringVar(&wc.WatchlistDir, "watchlist-dir", "/var/lib/conf-watcher", "Directory of the watchlist files for conf-watcher server")
 	fs.BoolVar(&wc.help, "help", false, "Print help message")
 	fs.BoolVar(&wc.version, "version", false, "Print version and exit")
 }
@@ -65,7 +65,7 @@ func (wc *WatcherConfig) checkFlags() {
 	if wc.WatchlistDir == "" {
 		fmt.Fprintf(os.Stderr, "Option '--watchlist-dir' is needed")
 		os.Exit(0)
-	} else if wc.WatchlistDir == "/var/run/conf-watcher" {
+	} else if wc.WatchlistDir == "/var/lib/conf-watcher" {
 		if err := os.MkdirAll(wc.WatchlistDir, 0755); err != nil {
 			fmt.Fprintf(os.Stderr, "%v", err)
 			os.Exit(1)

@@ -27,11 +27,11 @@ Once a watchFile is changed, then the corresponding command will be executed.
 
 The watchlist directory contains watchlist files. When a watchlist file is added into (removed from) the  watchlist direcotry, the watchFiles in the watchlist file will be watching (unwatching).
 
-Default watchlist directory is `/var/run/conf-watcher`, we can use the option `--watchlist-dir` to change it.
+Default watchlist directory is `/var/lib/conf-watcher`, we can use the option `--watchlist-dir` to change it.
 
 ## Running
 
-If we use default watchlist directory `/var/run/conf-watcher`, then we can run:
+If we use default watchlist directory `/var/lib/conf-watcher`, then we can run:
 
 ```
 root@ubuntu:~/work/src/github.com/caicloud/conf-watcher# ./conf-watcher
