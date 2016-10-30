@@ -260,10 +260,13 @@ func (w *Watcher) addWatchlistEntry(watchlist string) {
 			newEntry := new(Entry)
 			newEntry.WatchFile = en.WatchFile
 			newEntry.Command = en.Command
-			w.addWatchEntry(&watchEntry{
+			wentry := &watchEntry{
 				watchlist: watchlist,
 				entry:     newEntry,
-			})
+			}
+			if err := w.addWatchEntry(wentry); err == nil {
+				w.executeCommand(wentry.entry.WatchFile)
+			}
 		}
 	}
 }
