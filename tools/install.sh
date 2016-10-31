@@ -34,6 +34,7 @@ elif [ "${os_distro}" == "centos" ]; then
     set -x
     cp -f ${DIST_PATH}/${TARGET} /usr/bin/
     cp ${ROOT_DIR}/tools/centos/${SERVICE_NAME}.service /etc/systemd/system/
+    systemctl enable ${SERVICE_NAME}
     systemctl --system daemon-reload
     systemctl start ${SERVICE_NAME}
 else

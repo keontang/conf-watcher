@@ -42,3 +42,9 @@ We can also specify another watchlist directory, for example:
 ```
 root@ubuntu:~/work/src/github.com/caicloud/conf-watcher# ./conf-watcher --watchlist-dir=$HOME/conf-watcher
 ```
+
+## Install
+
+```
+# ./tools/install.sh
+```
