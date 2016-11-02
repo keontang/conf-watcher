@@ -337,6 +337,8 @@ func (w *Watcher) executeCommand(watchFile string) {
 		} else {
 			glog.Infof("Executed command: /bin/sh -c \"%s\", output: %s", cmdString, out.String())
 		}
+	} else {
+		glog.Warning("Command is empty")
 	}
 }
 
