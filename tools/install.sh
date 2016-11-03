@@ -27,11 +27,13 @@ os_distro=$(grep '^NAME=' /etc/os-release | sed s'/NAME=//' | sed s'/"//g' | awk
 
 if [ "${os_distro}" == "ubuntu" ]; then
     set -x
+    service ${SERVICE_NAME} stop 1>/dev/null 2>&1
     cp -f ${DIST_PATH}/${TARGET} /usr/bin/
     cp ${ROOT_DIR}/tools/ubuntu/${SERVICE_NAME}.conf /etc/init/
     service ${SERVICE_NAME} start
 elif [ "${os_distro}" == "centos" ]; then
     set -x
+    systemctl stop ${SERVICE_NAME} 1>/dev/null 2>&1
     cp -f ${DIST_PATH}/${TARGET} /usr/bin/
     cp ${ROOT_DIR}/tools/centos/${SERVICE_NAME}.service /etc/systemd/system/
     systemctl enable ${SERVICE_NAME}
