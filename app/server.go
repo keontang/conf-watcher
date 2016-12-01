@@ -401,6 +401,7 @@ func (w *Watcher) startWatchFileWatching(ctx context.Context) {
 	for {
 		select {
 		case ev := <-w.fileWatcher.Events:
+			// Todo: Need a special thread to do all file events.
 			w.doFileEvent(ev)
 
 		case err := <-w.fileWatcher.Errors:
@@ -416,6 +417,7 @@ func (w *Watcher) startWatchlistWatching(ctx context.Context) {
 	for {
 		select {
 		case ev := <-w.dirWatcher.Events:
+			// Todo: Need a special thread to do all dir events.
 			w.doDirEvent(ev)
 
 		case err := <-w.dirWatcher.Errors:
