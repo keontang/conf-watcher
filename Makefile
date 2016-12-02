@@ -9,7 +9,7 @@ GO_BUILD=$(GO_CMD) build
 GO_TEST=$(GO_CMD) test
 GO_CLEAN=$(GO_CMD) clean
 GO_FMT=$(GO_CMD) fmt -x
-# Vet is a simple checker for static errors in Go source code. 
+# Vet is a simple checker for static errors in Go source code.
 GO_VET=$(GO_CMD) vet
 
 GIT_TAG=`git describe --tags --always`
