@@ -40,7 +40,7 @@ const (
 
 // The format of an entry in a watchlist json file is:
 //	[
-//		{ "watchFile": "/var/run/flannel/subnet.env", "command": "service docker restart"},
+//		{ "watchFile": "/var/run/flannel/subnet.env", "command": "service docker restart" },
 //		...
 //	]
 type Entry struct {
